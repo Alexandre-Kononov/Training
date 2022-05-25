@@ -21,20 +21,20 @@ def custom_predict(number: int = 1) -> int:
     
     count = 0
     
-    max = 101 # Максимальный 
-    min = 0   # Минимальный предел выборки
+    max = 101 # максимальный предел выборки
+    min = 0   # минимальный предел выборки
     
-    predict_number = 0 # Предполагаемое число  
+    predict_number = 0 # предполагаемое число  
     
     while True:
         count += 1
-        predict_number = (min + (max - min)//2)  # Делим выборку пополам
+        predict_number = (min + (max - min)//2)  # делим выборку пополам
     
         if predict_number < number: 
-            min = predict_number
+            min = predict_number # задаём новый нижний предел выборки
             
         elif predict_number > number :
-            max = predict_number
+            max = predict_number # задаём новый верхний предел выборки
             
         elif predict_number == number :
             break # выход из цикла если угадали
