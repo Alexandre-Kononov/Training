@@ -1,0 +1,23 @@
+import numpy as np
+
+number = np.random.randint(1, 101) # загадываем число
+
+count = 0
+    
+max = 101 # Переменная, определяющая максимальное число в выборке
+min = 0   # Переменная, определяющая максимальное число в выборке
+predict_number = 0 # Угадываемое число, в начале работы заведомо находится за пределами выборки  
+    
+while True:
+    count += 1
+    predict_number = (min + (max - min)//2)  # предполагаемое число
+    
+    if predict_number < number:
+        min = predict_number
+    elif predict_number > number :
+        max = predict_number
+    elif predict_number == number :
+        break # выход из цикла если угадали
+    
+     
+print (number, count)
